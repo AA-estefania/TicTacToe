@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>TicTacToe</title>
+</head>
+<body>
+
+    <div class="popup" id="chooseSymbol">
+        <h2>Choose Your Symbol</h2>
+        <button class="symbol-button" onclick="chooseSymbol('X')">X</button>
+        <button class="symbol-button" onclick="chooseSymbol('O')">O</button>
+    </div>
+
+    <div id="gameBoard" class="hidden">
+        <table>
+            <tr>
+                <td id="cell-0" onclick="makeMove(0)"></td>
+                <td id="cell-1" onclick="makeMove(1)"></td>
+                <td id="cell-2" onclick="makeMove(2)"></td>
+            </tr>
+            <tr>
+                <td id="cell-3" onclick="makeMove(3)"></td>
+                <td id="cell-4" onclick="makeMove(4)"></td>
+                <td id="cell-5" onclick="makeMove(5)"></td>
+            </tr>
+            <tr>
+                <td id="cell-6" onclick="makeMove(6)"></td>
+                <td id="cell-7" onclick="makeMove(7)"></td>
+                <td id="cell-8" onclick="makeMove(8)"></td>
+            </tr>
+        </table>
+
+        <div class="turn-indicator">
+            <h3 id="playerTurn">Player Turn: X</h3>
+            <h3 id="computerTurn" class="hidden">Computer Turn</h3>
+        </div>
+
+        <div id="resultMessage" class="hidden">
+            <h2 id="resultText"></h2>
+        </div>
+
+        <button id="restartButton" class="hidden" onclick="restartGame()">Restart</button>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
