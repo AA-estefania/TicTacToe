@@ -136,9 +136,22 @@ function checkDraw() {
     return board.every(cell => cell !== '');
 }
 
+
 function displayResult(message) {
-  document.getElementById('resultText').innerText = message;
-  document.getElementById('resultMessage').classList.remove('hidden');
+    document.getElementById('resultText').innerText = message;
+    document.getElementById('resultMessage').classList.remove('hidden');
+
+    // Show confetti if there's a win
+    if (message.includes('wins')) {
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+    }
+
+    // Show the restart button
+    document.getElementById('restartButton').classList.remove('hidden');
 }
 
 function restartGame() {
@@ -149,6 +162,9 @@ function restartGame() {
     document.querySelectorAll('td').forEach(cell => cell.innerText = ''); // Clear all cells
     currentTurn = 'X'; // Reset turn to X
 
+    // Hide the result message
+    document.getElementById('resultMessage').classList.add('hidden');
+    
     // Hide or show the choose symbol screen again
     document.getElementById('chooseSymbol').classList.remove('hidden');
     document.getElementById('gameBoard').classList.add('hidden');

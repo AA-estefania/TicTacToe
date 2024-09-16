@@ -41,8 +41,8 @@ table {
 }
 
 td {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border: 2px solid var(--first-color);
     font-size: 4em;
     text-align: center;
